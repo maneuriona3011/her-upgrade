@@ -1,0 +1,134 @@
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
+import { ArrowRight, Sparkles, Brain, Shield, Heart } from 'lucide-react';
+
+const Index = () => {
+  return (
+    <div className="min-h-screen bg-background">
+      <Header />
+      <main id="main-content">
+        {/* HERO */}
+        <section className="relative py-24 md:py-36 flex items-center justify-center text-center px-6">
+          <div className="absolute inset-0 bg-gradient-to-b from-secondary/50 to-background" />
+          <div className="relative max-w-3xl mx-auto space-y-8">
+            <p className="text-xs tracking-[0.4em] uppercase text-muted-foreground animate-fade-in">Transformación radical</p>
+            <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl font-normal tracking-tight text-foreground animate-fade-in" style={{ animationDelay: '0.1s' }}>
+              HER UPGRADE
+            </h1>
+            <p className="font-serif text-xl md:text-2xl italic text-primary animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              No es cambio. Es evolución.
+            </p>
+            <p className="text-muted-foreground max-w-xl mx-auto leading-relaxed animate-fade-in" style={{ animationDelay: '0.3s' }}>
+              This is a space for women who are ready to stop negotiating with themselves and start becoming who they are meant to be.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <Button size="lg" className="group" asChild>
+                <Link to="/diary">
+                  Empieza tu proceso
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <a href="#method">Descubre el método</a>
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* VALUE */}
+        <section className="py-20 md:py-28 px-6">
+          <div className="max-w-2xl mx-auto text-center space-y-6">
+            <div className="w-12 h-px bg-primary mx-auto" />
+            <h2 className="font-serif text-3xl md:text-4xl text-foreground leading-snug">
+              You don't need more motivation.
+            </h2>
+            <p className="font-serif text-xl md:text-2xl text-primary italic">
+              You need clarity, structure, and discipline.
+            </p>
+            <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto">
+              Her Upgrade is a system of personal evolution focused on identity, emotional control, and conscious growth.
+            </p>
+            <div className="w-12 h-px bg-primary mx-auto" />
+          </div>
+        </section>
+
+        {/* DIARY */}
+        <section className="py-20 md:py-28 px-6 bg-secondary/40">
+          <div className="max-w-2xl mx-auto text-center space-y-6">
+            <p className="text-xs tracking-[0.4em] uppercase text-muted-foreground">Práctica diaria</p>
+            <h2 className="section-title">Evolución diaria</h2>
+            <p className="text-muted-foreground leading-relaxed max-w-lg mx-auto">
+              Daily reflections designed to reprogram your mind, strengthen your discipline, and elevate your identity.
+            </p>
+            <Button size="lg" className="group" asChild>
+              <Link to="/diary">
+                Leer el diario
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </div>
+        </section>
+
+        {/* METHOD */}
+        <section id="method" className="py-20 md:py-28 px-6">
+          <div className="max-w-4xl mx-auto text-center space-y-12">
+            <div>
+              <p className="text-xs tracking-[0.4em] uppercase text-muted-foreground mb-4">El sistema</p>
+              <h2 className="section-title">El método</h2>
+              <p className="text-muted-foreground max-w-lg mx-auto leading-relaxed">
+                Her Upgrade is built on four pillars:
+              </p>
+            </div>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+              {[
+                { icon: Brain, title: 'Mental clarity', desc: 'Silencia el ruido. Enfoca tu mente.' },
+                { icon: Shield, title: 'Discipline', desc: 'La estructura que sostiene tu evolución.' },
+                { icon: Sparkles, title: 'Personal power', desc: 'Tu identidad al más alto nivel.' },
+                { icon: Heart, title: 'Emotional elegance', desc: 'Control emocional. Respuesta consciente.' },
+              ].map((pillar) => (
+                <div key={pillar.title} className="space-y-4 p-6 rounded-lg border border-border bg-card hover:border-primary/30 transition-colors">
+                  <pillar.icon className="h-6 w-6 text-primary mx-auto" />
+                  <h3 className="font-serif text-lg text-foreground">{pillar.title}</h3>
+                  <p className="text-sm text-muted-foreground">{pillar.desc}</p>
+                </div>
+              ))}
+            </div>
+            <Button variant="outline" size="lg" asChild>
+              <Link to="/diary">Descubre el método</Link>
+            </Button>
+          </div>
+        </section>
+
+        {/* LIBRARY */}
+        <section className="py-20 md:py-28 px-6 bg-secondary/40">
+          <div className="max-w-4xl mx-auto text-center space-y-8">
+            <p className="text-xs tracking-[0.4em] uppercase text-muted-foreground">Recursos</p>
+            <h2 className="section-title">Her Library</h2>
+            <p className="text-muted-foreground max-w-lg mx-auto leading-relaxed">
+              A curated archive of insights, edits, and her upgrade energy — because your next chapter deserves a strategic start.
+            </p>
+            <p className="text-sm italic text-muted-foreground">Click the images to shop!</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
+              {[
+                { title: 'The Identity Shift', subtitle: 'eBook — $5', tag: 'BESTSELLER' },
+                { title: 'Próximamente', subtitle: 'Nuevos productos digitales', tag: 'SOON' },
+                { title: 'Próximamente', subtitle: 'Herramientas de evolución', tag: 'SOON' },
+              ].map((product, i) => (
+                <div key={i} className="group relative aspect-[3/4] rounded-lg border border-border bg-card overflow-hidden flex flex-col items-center justify-center p-8 hover:border-primary/40 transition-all cursor-pointer">
+                  <span className="text-[10px] tracking-[0.3em] uppercase text-primary mb-4">{product.tag}</span>
+                  <h3 className="font-serif text-xl text-foreground mb-2">{product.title}</h3>
+                  <p className="text-sm text-muted-foreground">{product.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
+
+export default Index;
